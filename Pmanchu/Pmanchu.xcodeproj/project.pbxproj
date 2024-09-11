@@ -61,8 +61,8 @@
 			isa = PBXGroup;
 			children = (
 				6FB81AB12C91F98B0060CB73 /* App */,
-				6FB81AAF2C91F9760060CB73 /* Resources */,
 				6FB81AAE2C91F9370060CB73 /* Sources */,
+				6FB81AAF2C91F9760060CB73 /* Resources */,
 				6FB81AA82C91F8C30060CB73 /* Info.plist */,
 			);
 			path = Pmanchu;
