@@ -15,6 +15,7 @@ class SignUpNameViewController: UIViewController, UITextFieldDelegate {
         $0.layer.cornerRadius = 52
         $0.clipsToBounds = true
         $0.backgroundColor = UIColor(named: "gray1")
+        $0.isUserInteractionEnabled = true
         
         $0.image = UIImage(named: "imagePicker")
     }
