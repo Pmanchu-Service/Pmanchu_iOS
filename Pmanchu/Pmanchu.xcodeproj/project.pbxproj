@@ -20,6 +20,8 @@
 		6FB81ABB2C92A3BB0060CB73 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FB81ABA2C92A3BB0060CB73 /* LoginViewModel.swift */; };
 		6FD661102C94467F00393F49 /* SignUpSkillViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FD6610F2C94467F00393F49 /* SignUpSkillViewController.swift */; };
 		8860D2D02C93E28900D4756A /* PMSignUpLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8860D2CF2C93E28900D4756A /* PMSignUpLabel.swift */; };
+		88EBD6EF2C945370006C70CE /* PMTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88EBD6EE2C945370006C70CE /* PMTextField.swift */; };
+		88EBD6F22C9467A6006C70CE /* PMTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88EBD6F12C9467A6006C70CE /* PMTextView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +38,8 @@
 		6FB81ABA2C92A3BB0060CB73 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		6FD6610F2C94467F00393F49 /* SignUpSkillViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpSkillViewController.swift; sourceTree = "<group>"; };
 		8860D2CF2C93E28900D4756A /* PMSignUpLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PMSignUpLabel.swift; sourceTree = "<group>"; };
+		88EBD6EE2C945370006C70CE /* PMTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PMTextField.swift; sourceTree = "<group>"; };
+		88EBD6F12C9467A6006C70CE /* PMTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PMTextView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +58,8 @@
 		6F3DA9EA2C92BA9500F06971 /* DesignSystem */ = {
 			isa = PBXGroup;
 			children = (
+				88EBD6F02C94678D006C70CE /* TextView */,
+				88EBD6ED2C94535B006C70CE /* TextField */,
 				6F3DA9F22C92D99F00F06971 /* Button */,
 				6F3DA9EB2C92BAE600F06971 /* Label */,
 			);
@@ -174,6 +180,22 @@
 			path = SignUpSkill;
 			sourceTree = "<group>";
 		};
+		88EBD6ED2C94535B006C70CE /* TextField */ = {
+			isa = PBXGroup;
+			children = (
+				88EBD6EE2C945370006C70CE /* PMTextField.swift */,
+			);
+			path = TextField;
+			sourceTree = "<group>";
+		};
+		88EBD6F02C94678D006C70CE /* TextView */ = {
+			isa = PBXGroup;
+			children = (
+				88EBD6F12C9467A6006C70CE /* PMTextView.swift */,
+			);
+			path = TextView;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -254,6 +276,7 @@
 			files = (
 				6FD661102C94467F00393F49 /* SignUpSkillViewController.swift in Sources */,
 				6FB81AB32C91FA280060CB73 /* LoginViewController.swift in Sources */,
+				88EBD6EF2C945370006C70CE /* PMTextField.swift in Sources */,
 				6FB81A9F2C91F8C20060CB73 /* SignUpNameViewController.swift in Sources */,
 				6F3DA9FD2C9301BD00F06971 /* SignUpSelfViewController.swift in Sources */,
 				6FB81A9B2C91F8C20060CB73 /* AppDelegate.swift in Sources */,
@@ -261,6 +284,7 @@
 				6F3DA9F42C92DA1A00F06971 /* PMButton.swift in Sources */,
 				8860D2D02C93E28900D4756A /* PMSignUpLabel.swift in Sources */,
 				6FB81A9D2C91F8C20060CB73 /* SceneDelegate.swift in Sources */,
+				88EBD6F22C9467A6006C70CE /* PMTextView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

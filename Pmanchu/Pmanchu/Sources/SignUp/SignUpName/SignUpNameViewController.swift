@@ -20,22 +20,7 @@ class SignUpNameViewController: UIViewController, UITextFieldDelegate {
         $0.image = UIImage(named: "imagePicker")
     }
 
-
-    private let nameTextField = UITextField().then {
-        $0.placeholder = "이름(본명)을 입력하세요"
-        $0.textColor = UIColor(named: "gray5")
-        $0.layer.cornerRadius = 5
-        $0.backgroundColor = UIColor(named: "gray1")
-        $0.textAlignment = .left
-        $0.layer.borderColor = UIColor(named: "gray2")?.cgColor
-        $0.layer.borderWidth = 1
-        $0.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 12, height: 0))
-        $0.leftViewMode = .always
-        $0.textColor = .black
-        $0.addTarget(self, action: #selector(textFieldDidChange), for: .editingChanged)
-    }
-    
-    
+    private let nameTextField = PMTextField(type: .name)
     
     private let nextButton = PMButton().then {
         $0.isEnabled = false
@@ -62,7 +47,7 @@ class SignUpNameViewController: UIViewController, UITextFieldDelegate {
         self.imagePicker.delegate = self
         
         nextButton.addTarget(self, action: #selector(buttonTapped), for: .touchUpInside)
-        nameTextField.addTarget(self, action: #selector(didEndSelectTextField), for: .editingDidBegin)
+        nameTextField.textField.addTarget(self, action: #selector(textFieldDidChange), for: .editingChanged)
     }
 
     private func addView() {
@@ -79,23 +64,20 @@ class SignUpNameViewController: UIViewController, UITextFieldDelegate {
             $0.top.equalTo(view.safeAreaLayoutGuide).inset(50)
             $0.leading.equalToSuperview().inset(32)
         }
-        
-        nextButton.snp.makeConstraints {
-            $0.bottom.equalTo(view.safeAreaLayoutGuide).inset(20)
-            $0.leading.trailing.equalToSuperview().inset(24)
-            $0.height.equalTo(65)
+        profileImageView.snp.makeConstraints {
+            $0.top.equalTo(titleLabel.detailLabel.snp.bottom).offset(60)
+            $0.leading.equalToSuperview().inset(24)
+            $0.width.height.equalTo(106)
         }
-        
         nameTextField.snp.makeConstraints {
             $0.top.equalTo(profileImageView.snp.bottom).offset(18)
             $0.leading.trailing.equalToSuperview().inset(24)
             $0.height.equalTo(45)
         }
-        
-        profileImageView.snp.makeConstraints {
-            $0.top.equalTo(titleLabel.detailLabel.snp.bottom).offset(60)
-            $0.leading.equalToSuperview().inset(24)
-            $0.width.height.equalTo(106)
+        nextButton.snp.makeConstraints {
+            $0.bottom.equalTo(view.safeAreaLayoutGuide).inset(20)
+            $0.leading.trailing.equalToSuperview().inset(24)
+            $0.height.equalTo(65)
         }
     }
 
@@ -114,9 +96,6 @@ class SignUpNameViewController: UIViewController, UITextFieldDelegate {
         }
     }
     
-    @objc func didEndSelectTextField() {
-        nameTextField.backgroundColor = .white
-    }
 
     @objc func pickImage() {
         self.present(self.imagePicker, animated: true)

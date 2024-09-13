@@ -6,32 +6,8 @@ import Then
 class SignUpSelfViewController: UIViewController {
     
     private let titleLabel = PMSignUpLabel(type: .intro)
-    
-    private let simpleTextField = UITextField().then {
-        $0.placeholder = "한 줄로 자기소개를 해주세요"
-        $0.textColor = UIColor(named: "gray5")
-        $0.layer.cornerRadius = 5
-        $0.backgroundColor = UIColor(named: "gray1")
-        $0.textAlignment = .left
-        $0.layer.borderColor = UIColor(named: "gray2")?.cgColor
-        $0.layer.borderWidth = 1
-        $0.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 12, height: 0))
-        $0.leftViewMode = .always
-        $0.textColor = .black
-    }
-    
-    private let complexTextField = UITextField().then {
-        $0.placeholder = "구체적으로 자기소개를 해주세요"
-        $0.textColor = UIColor(named: "gray5")
-        $0.layer.cornerRadius = 5
-        $0.backgroundColor = UIColor(named: "gray1")
-        $0.textAlignment = .left
-        $0.layer.borderColor = UIColor(named: "gray2")?.cgColor
-        $0.layer.borderWidth = 1
-        $0.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 12, height: 0))
-        $0.leftViewMode = .always
-        $0.textColor = .black
-    }
+    private let simpleTextField = PMTextField(type: .simpleintro)
+    private let complexTextView = PMTextView(type: .complexintre)
     
     private let nextButton = PMButton().then {
         $0.isEnabled = false
@@ -53,12 +29,16 @@ class SignUpSelfViewController: UIViewController {
         nextButton.addTarget(self, action: #selector(buttonTapped), for: .touchUpInside)
         
         
-        simpleTextField.addTarget(self, action: #selector(textFieldsDidChange), for: .editingChanged)
-        complexTextField.addTarget(self, action: #selector(textFieldsDidChange), for: .editingChanged)
+        simpleTextField.textField.addTarget(self, action: #selector(textFieldsDidChange), for: .editingChanged)
     }
     
     private func addView() {
-        [titleLabel, simpleTextField, complexTextField, nextButton].forEach { view.addSubview($0) }
+        [
+            titleLabel,
+            simpleTextField,
+            complexTextView,
+            nextButton
+        ].forEach { view.addSubview($0) }
     }
     
     private func layout() {
@@ -68,16 +48,14 @@ class SignUpSelfViewController: UIViewController {
         }
         
         simpleTextField.snp.makeConstraints {
-            $0.top.equalTo(252)
+            $0.top.equalTo(titleLabel.detailLabel.snp.bottom).offset(60)
             $0.leading.trailing.equalToSuperview().inset(24)
-            $0.width.equalTo(345)
             $0.height.equalTo(45)
         }
         
-        complexTextField.snp.makeConstraints {
+        complexTextView.snp.makeConstraints {
             $0.top.equalTo(simpleTextField.snp.bottom).offset(20)
             $0.leading.trailing.equalToSuperview().inset(24)
-            $0.width.equalTo(345)
             $0.height.equalTo(183)
         }
         
@@ -94,17 +72,19 @@ class SignUpSelfViewController: UIViewController {
         navigationController?.pushViewController(signUpSkillViewController, animated: true)
     }
     
+    @objc func didEndSelectTextField(sender: UITextField) {
+        sender.backgroundColor = .white
+    }
+    
     @objc func textFieldsDidChange() {
         
-        let SimpleTextFieldFill = !(simpleTextField.text ?? "").isEmpty
-        let ComplexTextFieldFill = !(complexTextField.text ?? "").isEmpty
+        let SimpleTextFieldFill = !(simpleTextField.textField.text ?? "").isEmpty
+        let ComplexTextFieldFill = !(complexTextView.textView.text ?? "").isEmpty
         
         if SimpleTextFieldFill && ComplexTextFieldFill {
-            
             nextButton.isEnabled = true
             nextButton.backgroundColor = UIColor(named: "main2")
         } else {
-            
             nextButton.isEnabled = false
             nextButton.backgroundColor = UIColor(named: "gray4")
         }
