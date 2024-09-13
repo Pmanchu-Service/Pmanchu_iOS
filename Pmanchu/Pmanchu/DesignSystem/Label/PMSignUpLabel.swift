@@ -1,63 +1,66 @@
-import Foundation
-import Then
-import SnapKit
 import UIKit
+import SnapKit
+import Then
 
-class PMSignUpLabel: UIStackView {
+enum LbType {
+    case name
+    var text: String {
+        switch self {
+        case .name:
+            return "이름을"
+        }
+    }
+}
+
+class PMSignUpLabel: UIView {
     
-    var title: String = ""
-    var explain: String = ""
-    
-    private let titleLabel: UILabel = {
-        let label = UILabel()
-        return label
-    }()
-    
-    let explainLabel = UILabel().then {
-        $0.text = ""
-        $0.textColor = .black
-        $0.font = .systemFont(ofSize: 20, weight: .regular)
+    let pmanchuLabel = UILabel().then {
+        $0.text = "프만추"
+        $0.textColor = UIColor(named: "main2")
+        $0.font = .systemFont(ofSize: 36, weight: .bold)
     }
     
-    init(title: String, explain: String) {
+    let signupLabel = UILabel().then {
+        $0.text = "회원가입"
+        $0.font = .systemFont(ofSize: 36, weight: .semibold)
+    }
+    
+    let detailLabel = UILabel().then {
+        $0.font = .systemFont(ofSize: 20)
+    }
+    
+    init(type: LbType){
         super.init(frame: .zero)
-        self.axis = .vertical
-        self.spacing = 8
-        self.layoutMargins = .init(top: 20, left: 24, bottom: 20, right: 24)
-        self.isLayoutMarginsRelativeArrangement = true
         
-        setTitle(title)
-        setExplain(explain)
+        detailLabel.text = "\(type.text) 입력하세요"
         
-        self.addArrangedSubview(titleLabel)
-        self.addArrangedSubview(explainLabel)
+        addView()
+        layout()
     }
     
-    required init(coder: NSCoder) {
+    required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    private func setTitle(_ title: String) {
-        let fullText = title
-        let attributedString = NSMutableAttributedString(string: fullText)
-        
-        let baseFont = UIFont.systemFont(ofSize: 36, weight: .semibold)
-        let baseColor = UIColor.black
-        attributedString.addAttribute(.font, value: baseFont, range: NSMakeRange(0, fullText.count))
-        attributedString.addAttribute(.foregroundColor, value: baseColor, range: NSMakeRange(0, fullText.count))
-        
-        
-        let customFont = UIFont.systemFont(ofSize: 36, weight: .bold)
-        let customColor = UIColor.main2
-        let range = (fullText as NSString).range(of: "프만추")
-        
-        attributedString.addAttribute(.font, value: customFont, range: range)
-        attributedString.addAttribute(.foregroundColor, value: customColor, range: range)
-        
-        titleLabel.attributedText = attributedString
+    func addView() {
+        [
+            pmanchuLabel,
+            signupLabel,
+            detailLabel
+        ].forEach{ self.addSubview($0) }
     }
-
-    private func setExplain(_ explain: String) {
-        explainLabel.text = explain
+    
+    func layout() {
+        pmanchuLabel.snp.makeConstraints {
+            $0.top.leading.equalToSuperview()
+        }
+        signupLabel.snp.makeConstraints {
+            $0.top.equalToSuperview()
+            $0.leading.equalTo(pmanchuLabel.snp.trailing).offset(3)
+        }
+        detailLabel.snp.makeConstraints {
+            $0.top.equalTo(signupLabel.snp.bottom).offset(6)
+            $0.leading.equalToSuperview()
+        }
     }
 }
