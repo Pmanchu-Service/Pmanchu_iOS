@@ -45,7 +45,7 @@ class SignUpNameViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        view.backgroundColor = .white
         
         attribute()
         addView()
@@ -55,7 +55,7 @@ class SignUpNameViewController: UIViewController, UITextFieldDelegate {
     }
     
     private func attribute(){
-        view.backgroundColor = .white
+       
         
         self.imagePicker.sourceType = .photoLibrary
         self.imagePicker.allowsEditing = true

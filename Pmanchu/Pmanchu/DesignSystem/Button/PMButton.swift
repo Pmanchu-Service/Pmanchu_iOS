@@ -28,12 +28,6 @@ class PMButton: UIButton {
     }
     
     
-//    override var isHighlighted: Bool {
-//        didSet {
-//            backgroundColor = isHighlighted ? UIColor.darkGray : UIColor.systemBlue
-//        }
-//    }
-
     
     func configure(title: String, action: Selector, target: Any) {
         self.do {

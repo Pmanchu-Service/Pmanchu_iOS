@@ -4,11 +4,15 @@ import Then
 
 enum LbType {
     case name
+    case intro
     var text: String {
         switch self {
         case .name:
             return "이름을"
+        case .intro:
+            return "자기소개를"
         }
+    
     }
 }
 
