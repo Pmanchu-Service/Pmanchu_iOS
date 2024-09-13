@@ -7,7 +7,7 @@ class SignUpSelfViewController: UIViewController {
     
     private let titleLabel = PMSignUpLabel(type: .intro)
     private let simpleTextField = PMTextField(type: .simpleintro)
-    private let complexTextView = PMTextView(type: .complexintre)
+    private let complexTextView = PMTextView(type: .complexintro)
     
     private let nextButton = PMButton().then {
         $0.isEnabled = false

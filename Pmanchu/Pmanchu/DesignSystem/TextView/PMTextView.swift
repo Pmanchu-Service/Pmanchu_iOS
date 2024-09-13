@@ -3,10 +3,10 @@ import SnapKit
 import Then
 
 enum TvType {
-    case complexintre
+    case complexintro
     var text: String {
         switch self {
-        case .complexintre:
+        case .complexintro:
             return "구체적인 자기소개를 해주세요"
         }
     }
@@ -24,7 +24,10 @@ class PMTextView: UIView {
         $0.layer.borderWidth = 1
     }
     
+    var placeholderText: String
+    
     init(type: TvType) {
+        self.placeholderText = type.text
         super.init(frame: .zero)
         
         self.textView.delegate = self
@@ -39,9 +42,7 @@ class PMTextView: UIView {
     }
     
     func addView() {
-        [
-            textView
-        ].forEach{ self.addSubview($0) }
+        self.addSubview(textView)
     }
     
     func layout() {
@@ -49,24 +50,24 @@ class PMTextView: UIView {
             $0.edges.equalToSuperview()
         }
     }
-    
 }
 
 extension PMTextView: UITextViewDelegate {
     func textViewDidBeginEditing(_ textView: UITextView) {
-        if textView.textColor == UIColor(named: "gray4"){
+        if textView.textColor == UIColor(named: "gray4") {
             textView.text = ""
             textView.textColor = .black
         }
-        
     }
     
-    func textViewDidChange(_ textView: UITextView, type: TvType) {
-        print("비어있음")
-        if textView.text == "" {
-            textView.text = type.text
+    func textViewDidEndEditing(_ textView: UITextView) {
+        if textView.text.isEmpty {
+            textView.text = placeholderText
             textView.textColor = UIColor(named: "gray4")
-            print("비어있음")
         }
+    }
+    
+    func textViewDidChange(_ textView: UITextView) {
+        
     }
 }
