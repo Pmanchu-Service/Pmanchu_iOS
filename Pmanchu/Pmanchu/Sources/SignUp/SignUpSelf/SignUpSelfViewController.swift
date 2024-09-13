@@ -79,9 +79,9 @@ class SignUpSelfViewController: UIViewController {
     @objc func textFieldsDidChange() {
         
         let SimpleTextFieldFill = !(simpleTextField.textField.text ?? "").isEmpty
-        let ComplexTextFieldFill = !(complexTextView.textView.text ?? "").isEmpty
+        let ComplexTextView = complexTextView.textView.textColor != UIColor(named: "gray4")
         
-        if SimpleTextFieldFill && ComplexTextFieldFill {
+        if SimpleTextFieldFill && ComplexTextView  {
             nextButton.isEnabled = true
             nextButton.backgroundColor = UIColor(named: "main2")
         } else {

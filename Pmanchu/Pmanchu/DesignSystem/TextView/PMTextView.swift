@@ -68,6 +68,9 @@ extension PMTextView: UITextViewDelegate {
     }
     
     func textViewDidChange(_ textView: UITextView) {
-        
+        if textView.text.isEmpty {
+            textView.text = placeholderText
+            textView.textColor = UIColor(named: "gray4")
+        }
     }
 }
