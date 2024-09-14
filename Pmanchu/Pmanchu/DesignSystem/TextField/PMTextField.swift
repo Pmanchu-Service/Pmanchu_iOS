@@ -5,12 +5,15 @@ import Then
 enum TfType {
     case name
     case simpleintro
+    case skillStack
     var text: String {
         switch self {
         case .name:
             return "이름(본명)을 입력해주세요"
         case .simpleintro:
             return "한 줄로 자기소개를 해주세요"
+        case .skillStack:
+            return "기술스택을 입력하세요"
         }
     }
 }
