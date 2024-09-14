@@ -24,7 +24,7 @@ class SignUpSelfViewController: UIViewController, UITextViewDelegate {
         attribute()
         
         // UITextView의 delegate 설정
-        complexTextView.textView.delegate = self
+//        complexTextView.textView.delegate = self
     }
     
     private func attribute() {
@@ -82,7 +82,7 @@ class SignUpSelfViewController: UIViewController, UITextViewDelegate {
     
     private func updateNextButtonState() {
         let SimpleTextFieldFill = !(simpleTextField.textField.text ?? "").isEmpty
-        let ComplexTextViewFill = !(complexTextView.textView.text ?? "").isEmpty && complexTextView.textView.textColor != UIColor(named: "gray4")
+        let ComplexTextViewFill = !(complexTextView.textView.text ?? "").isEmpty
         
         if SimpleTextFieldFill && ComplexTextViewFill {
             nextButton.isEnabled = true
