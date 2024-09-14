@@ -19,12 +19,10 @@ class SignUpSelfViewController: UIViewController, UITextViewDelegate {
         super.viewDidLoad()
         view.backgroundColor = .white
         navigationItem.hidesBackButton = true
+        complexTextView.textView.delegate = self
         addView()
         layout()
         attribute()
-        
-        // UITextView의 delegate 설정
-//        complexTextView.textView.delegate = self
     }
     
     private func attribute() {
@@ -75,7 +73,7 @@ class SignUpSelfViewController: UIViewController, UITextViewDelegate {
         updateNextButtonState()
     }
     
-    // UITextViewDelegate method
+    
     func textViewDidChange(_ textView: UITextView) {
         updateNextButtonState()
     }
