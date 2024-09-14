@@ -3,7 +3,7 @@ import SnapKit
 import UIKit
 import Then
 
-class SignUpSelfViewController: UIViewController {
+class SignUpSelfViewController: UIViewController, UITextViewDelegate {
     
     private let titleLabel = PMSignUpLabel(type: .intro)
     private let simpleTextField = PMTextField(type: .simpleintro)
@@ -22,13 +22,13 @@ class SignUpSelfViewController: UIViewController {
         addView()
         layout()
         attribute()
+        
+        // UITextView의 delegate 설정
+        complexTextView.textView.delegate = self
     }
     
     private func attribute() {
-        
         nextButton.addTarget(self, action: #selector(buttonTapped), for: .touchUpInside)
-        
-        
         simpleTextField.textField.addTarget(self, action: #selector(textFieldsDidChange), for: .editingChanged)
     }
     
@@ -67,21 +67,24 @@ class SignUpSelfViewController: UIViewController {
     }
     
     @objc func buttonTapped() {
-        
         let signUpSkillViewController = SignUpSkillViewController()
         navigationController?.pushViewController(signUpSkillViewController, animated: true)
     }
     
-    @objc func didEndSelectTextField(sender: UITextField) {
-        sender.backgroundColor = .white
+    @objc func textFieldsDidChange() {
+        updateNextButtonState()
     }
     
-    @objc func textFieldsDidChange() {
-        
+    // UITextViewDelegate method
+    func textViewDidChange(_ textView: UITextView) {
+        updateNextButtonState()
+    }
+    
+    private func updateNextButtonState() {
         let SimpleTextFieldFill = !(simpleTextField.textField.text ?? "").isEmpty
-        let ComplexTextView = complexTextView.textView.textColor != UIColor(named: "gray4")
+        let ComplexTextViewFill = !(complexTextView.textView.text ?? "").isEmpty && complexTextView.textView.textColor != UIColor(named: "gray4")
         
-        if SimpleTextFieldFill && ComplexTextView  {
+        if SimpleTextFieldFill && ComplexTextViewFill {
             nextButton.isEnabled = true
             nextButton.backgroundColor = UIColor(named: "main2")
         } else {
