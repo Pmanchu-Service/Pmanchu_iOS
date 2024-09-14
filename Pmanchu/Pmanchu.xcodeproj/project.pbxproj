@@ -91,6 +91,7 @@
 				6F3DA9FA2C92FCEA00F06971 /* SignUpName */,
 				6F3DA9FB2C93019300F06971 /* SignUpSelf */,
 				6FD6610E2C94465900393F49 /* SignUpSkill */,
+				6F5E56D42C95EF1D002AE763 /* SignUpMajor */,
 			);
 			path = SignUp;
 			sourceTree = "<group>";
@@ -117,6 +118,13 @@
 				6F3DA9FC2C9301BD00F06971 /* SignUpSelfViewController.swift */,
 			);
 			path = SignUpSelf;
+			sourceTree = "<group>";
+		};
+		6F5E56D42C95EF1D002AE763 /* SignUpMajor */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = SignUpMajor;
 			sourceTree = "<group>";
 		};
 		6FB81A8E2C91F8C20060CB73 = {
