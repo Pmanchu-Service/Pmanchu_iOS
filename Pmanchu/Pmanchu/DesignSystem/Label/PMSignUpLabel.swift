@@ -13,9 +13,8 @@ enum LbType {
         case .intro:
             return "자기소개를"
         case .skill:
-            return "기술스택을"
+            return "기술 스택을"
         }
-    
     }
 }
 

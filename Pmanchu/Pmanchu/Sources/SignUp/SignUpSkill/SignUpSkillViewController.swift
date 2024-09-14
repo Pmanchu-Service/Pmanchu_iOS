@@ -9,16 +9,8 @@ class SignUpSkillViewController: UIViewController {
     
     private let titleLabel = PMSignUpLabel(type: .skill)
     private let skillTextfield = PMTextField(type: .skillStack)
-    private let plusButton = UIButton().then {
-        $0.setImage(UIImage(named: "plusButton"), for: .normal)
-    }
-    private let nextButton = PMButton().then {
-        $0.isEnabled = false
-        $0.backgroundColor = UIColor(named: "gray4")
-        $0.setTitle("다음", for: .normal)
-    }
-    
-    
+    private let plusButton = PMButton(type: .plus)
+    private let nextButton = PMButton(type: .next)
     
     override func viewDidLoad() {
         view.backgroundColor = .white
@@ -26,7 +18,6 @@ class SignUpSkillViewController: UIViewController {
         addView()
         layout()
     }
-    
     
     private func addView() {
         [
@@ -36,8 +27,6 @@ class SignUpSkillViewController: UIViewController {
             nextButton
         ].forEach { view.addSubview($0) }
     }
-    
-    
     
     private func layout() {
         titleLabel.snp.makeConstraints {
@@ -49,21 +38,18 @@ class SignUpSkillViewController: UIViewController {
             $0.top.equalTo(titleLabel.detailLabel.snp.bottom).offset(60)
             $0.leading.equalToSuperview().inset(24)
             $0.trailing.equalToSuperview().inset(91)
-            $0.width.equalTo(281)
             $0.height.equalTo(45)
         }
         
         plusButton.snp.makeConstraints {
             $0.top.equalTo(titleLabel.detailLabel.snp.bottom).offset(60)
             $0.leading.equalTo(skillTextfield.snp.trailing).offset(8)
-            $0.trailing.equalTo(38)
             $0.width.height.equalTo(45)
         }
         
         nextButton.snp.makeConstraints {
-            $0.top.equalTo(733)
+            $0.bottom.equalTo(view.safeAreaLayoutGuide).inset(20)
             $0.leading.trailing.equalToSuperview().inset(24)
-            $0.width.equalTo(345)
             $0.height.equalTo(65)
         }
         

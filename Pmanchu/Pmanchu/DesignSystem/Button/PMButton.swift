@@ -2,37 +2,59 @@ import UIKit
 import SnapKit
 import Then
 
-class PMButton: UIButton {
+enum BtType {
+    case next
+    case plus
+    var text: String {
+        switch self {
+        case .next:
+            return "다음"
+        case .plus:
+            return ""
+        }
+    }
+}
 
+class PMButton: UIView {
+    let button = UIButton().then {
+        $0.backgroundColor = UIColor(named: "main2")
+        $0.setTitleColor(UIColor.white, for: .normal)
+    }
     
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        setupButton()
+    init(type: BtType) {
+        super.init(frame: .zero)
+        
+        switch type {
+        case .next:
+            self.button.backgroundColor = UIColor(named: "gray4")
+            self.button.setTitle(type.text, for: .normal)
+            self.button.layer.cornerRadius = 10
+            self.button.layer.borderWidth = 2
+            self.button.layer.borderColor = UIColor.white.cgColor
+            self.button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 24)
+        case .plus:
+            let imageConfig = UIImage.SymbolConfiguration(pointSize: 30, weight: .semibold)
+            self.button.layer.cornerRadius = 6
+            self.button.setPreferredSymbolConfiguration(imageConfig, forImageIn: .normal)
+            self.button.setImage(.init(systemName: "plus"), for: .normal)
+            self.button.tintColor = .white
+        }
+        
+        addView()
+        layout()
     }
 
     required init?(coder: NSCoder) {
-        super.init(coder: coder)
-        setupButton()
-    }
-
-    
-    private func setupButton() {
-        self.do {
-            $0.backgroundColor = UIColor.main2
-            $0.setTitleColor(UIColor.white, for: .normal)
-            $0.layer.cornerRadius = 10
-            $0.layer.borderWidth = 2
-            $0.layer.borderColor = UIColor.white.cgColor
-            $0.titleLabel?.font = UIFont.boldSystemFont(ofSize: 24)
-        }
+        fatalError("init(coder:) has not been implemented")
     }
     
+    private func addView() {
+        self.addSubview(button)
+    }
     
-    
-    func configure(title: String, action: Selector, target: Any) {
-        self.do {
-            $0.setTitle(title, for: .normal)
-            $0.addTarget(target, action: action, for: .touchUpInside)
+    private func layout() {
+        button.snp.makeConstraints {
+            $0.edges.equalToSuperview()
         }
     }
 }

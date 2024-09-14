@@ -23,11 +23,12 @@ class SignUpNameViewController: UIViewController, UITextFieldDelegate {
 
     private let nameTextField = PMTextField(type: .name)
     
-    private let nextButton = PMButton().then {
-        $0.isEnabled = false
-        $0.backgroundColor = UIColor(named: "gray4")
-        $0.setTitle("다음", for: .normal)
-    }
+    private let nextButton = PMButton(type: .next)
+//    private let nextButton = PMButton().then {
+//        $0.isEnabled = false
+//        $0.backgroundColor = UIColor(named: "gray4")
+//        $0.setTitle("다음", for: .normal)
+//    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,7 +48,7 @@ class SignUpNameViewController: UIViewController, UITextFieldDelegate {
         self.imagePicker.allowsEditing = true
         self.imagePicker.delegate = self
         
-        nextButton.addTarget(self, action: #selector(buttonTapped), for: .touchUpInside)
+        nextButton.button.addTarget(self, action: #selector(buttonTapped), for: .touchUpInside)
         nameTextField.textField.addTarget(self, action: #selector(textFieldDidChange), for: .editingChanged)
     }
 
@@ -89,11 +90,11 @@ class SignUpNameViewController: UIViewController, UITextFieldDelegate {
 
     @objc func textFieldDidChange(_ textField: UITextField) {
         if let text = textField.text, !text.isEmpty {
-            nextButton.backgroundColor = UIColor(named: "main2")
-            nextButton.isEnabled = true
+            nextButton.button.backgroundColor = UIColor(named: "main2")
+            nextButton.button.isEnabled = true
         } else {
-            nextButton.backgroundColor = UIColor(named: "gray4")
-            nextButton.isEnabled = false
+            nextButton.button.backgroundColor = UIColor(named: "gray4")
+            nextButton.button.isEnabled = false
         }
     }
     
