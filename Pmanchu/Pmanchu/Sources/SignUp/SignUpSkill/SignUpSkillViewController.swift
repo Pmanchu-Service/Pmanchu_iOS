@@ -25,13 +25,14 @@ class SignUpSkillViewController: UIViewController {
         attribute()
         addView()
         layout()
-        updateNextButtonState() // Initial button state
+        nextButtonLife()
     }
     
     private func attribute() {
         view.backgroundColor = .white
         navigationItem.hidesBackButton = true
-        plusButton.button.addTarget(self, action: #selector(addStack), for: .touchUpInside)
+        plusButton.button.addTarget(self, action: #selector(checkCell), for: .touchUpInside)
+        nextButton.button.addTarget(self, action: #selector(nextButtonTapped), for: .touchUpInside)
         tableview.delegate = self
         tableview.dataSource = self
     }
@@ -79,21 +80,28 @@ class SignUpSkillViewController: UIViewController {
         }
     }
     
-    @objc private func addStack() {
+    @objc private func checkCell() {
         guard let text = skillTextfield.textField.text, !text.isEmpty else { return }
         stackList.insert(text, at: 0)
         skillTextfield.textField.text = ""
         tableview.reloadData()
-        updateNextButtonState() // Update button state when a new cell is added
+        nextButtonLife()
     }
     
-    private func updateNextButtonState() {
+    @objc private func nextButtonTapped() {
+        
+        let signUpMajorVC = SignUpMajorViewController()
+        
+        navigationController?.pushViewController(signUpMajorVC, animated: true)
+    }
+    
+    private func nextButtonLife() {
         if stackList.isEmpty {
             nextButton.button.isEnabled = false
-            nextButton.button.backgroundColor = UIColor.gray // Set to a disabled color
+            nextButton.button.backgroundColor = UIColor.gray4
         } else {
             nextButton.button.isEnabled = true
-            nextButton.button.backgroundColor = UIColor.main2 // Set to a red color
+            nextButton.button.backgroundColor = UIColor.main2
         }
     }
 }
