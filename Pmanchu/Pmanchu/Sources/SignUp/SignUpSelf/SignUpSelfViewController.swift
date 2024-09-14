@@ -19,10 +19,14 @@ class SignUpSelfViewController: UIViewController, UITextViewDelegate {
         super.viewDidLoad()
         view.backgroundColor = .white
         navigationItem.hidesBackButton = true
-        complexTextView.textView.delegate = self
+        
         addView()
         layout()
         attribute()
+        
+        complexTextView.onTextChange = { [weak self] text in
+            self?.updateNextButtonState()
+        }
     }
     
     private func attribute() {

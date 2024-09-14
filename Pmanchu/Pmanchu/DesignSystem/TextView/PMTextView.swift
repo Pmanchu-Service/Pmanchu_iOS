@@ -16,7 +16,7 @@ class PMTextView: UIView {
     let textView = UITextView().then {
         $0.textColor = .black
         $0.font = .systemFont(ofSize: 16)
-        $0.contentInset = .init(top: 7, left: 7, bottom: 7, right: 7)
+        $0.contentInset = .init(top: 5, left: 7, bottom: 5, right: 7)
         $0.layer.cornerRadius = 5
         $0.backgroundColor = UIColor(named: "gray1")
         $0.textAlignment = .left
@@ -27,7 +27,10 @@ class PMTextView: UIView {
     let placeholderText = UILabel().then {
         $0.font = .systemFont(ofSize: 16)
         $0.textColor = UIColor(named: "gray4")
+        $0.isHidden = false
     }
+    
+    var onTextChange: ((String) -> Void)?
     
     init(type: TvType) {
         self.placeholderText.text = type.text
@@ -45,7 +48,7 @@ class PMTextView: UIView {
     
     func addView() {
         self.addSubview(textView)
-        textView.addSubview(placeholderText)
+        self.addSubview(placeholderText)
     }
     
     func layout() {
@@ -53,27 +56,22 @@ class PMTextView: UIView {
             $0.edges.equalToSuperview()
         }
         placeholderText.snp.makeConstraints {
-            $0.top.left.equalToSuperview().inset(7)
+            $0.top.left.equalToSuperview().inset(12)
         }
     }
 }
 
 extension PMTextView: UITextViewDelegate {
     func textViewDidBeginEditing(_ textView: UITextView) {
-        if textView.text.isEmpty {
-            placeholderText.isHidden = true
-        }
+        placeholderText.isHidden = true
     }
     
     func textViewDidChange(_ textView: UITextView) {
-        if textView.text.isEmpty {
-            placeholderText.isHidden = false
-        }
+        placeholderText.isHidden = !textView.text.isEmpty
+        onTextChange?(textView.text)
     }
     
     func textViewDidEndEditing(_ textView: UITextView) {
-        if textView.text.isEmpty {
-            placeholderText.isHidden = false
-        }
+        placeholderText.isHidden = !textView.text.isEmpty
     }
 }
