@@ -13,8 +13,8 @@ class SignUpSkillViewController: UIViewController {
     
     override func viewDidLoad() {
         
-        view.backgroundColor = .red
-        navigationItem.hidesBackButton = true
+        view.backgroundColor = .main3
+//        navigationItem.hidesBackButton = true
     }
     
 }

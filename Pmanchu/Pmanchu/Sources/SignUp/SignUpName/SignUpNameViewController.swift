@@ -3,6 +3,7 @@ import SnapKit
 import Then
 import Foundation
 
+
 class SignUpNameViewController: UIViewController, UITextFieldDelegate {
     
     private let titleLabel = PMSignUpLabel(type: .name)
@@ -82,7 +83,7 @@ class SignUpNameViewController: UIViewController, UITextFieldDelegate {
     }
 
     @objc func buttonTapped() {
-        print("PMButton was tapped!")
+        print("PMButton tapped!")
         navigationController?.pushViewController(SignUpSelfViewController(), animated: true)
     }
 
