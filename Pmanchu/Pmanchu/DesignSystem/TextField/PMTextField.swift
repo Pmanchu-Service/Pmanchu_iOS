@@ -38,7 +38,12 @@ class PMTextField: UIView {
     init(type: TfType){
         super.init(frame: .zero)
         
-        textField.placeholder = type.text
+        switch type {
+        case .stackCell:
+            textField.textColor = .black
+        default:
+            textField.placeholder = type.text
+        }
         
         attribute()
         addView()

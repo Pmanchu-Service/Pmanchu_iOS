@@ -5,11 +5,12 @@ import Then
 enum BtType {
     case next
     case plus
+    case delete
     var text: String {
         switch self {
         case .next:
             return "다음"
-        case .plus:
+        default:
             return ""
         }
     }
@@ -38,6 +39,12 @@ class PMButton: UIView {
             self.button.setPreferredSymbolConfiguration(imageConfig, forImageIn: .normal)
             self.button.setImage(.init(systemName: "plus"), for: .normal)
             self.button.tintColor = .white
+        case .delete:
+            let imageConfig = UIImage.SymbolConfiguration(pointSize: 18, weight: .semibold)
+            self.button.backgroundColor = .clear
+            self.button.setImage(.init(systemName: "xmark"), for: .normal)
+            self.button.setPreferredSymbolConfiguration(imageConfig, forImageIn: .normal)
+            self.button.tintColor = .black
         }
         
         addView()

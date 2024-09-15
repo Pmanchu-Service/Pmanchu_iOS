@@ -22,13 +22,7 @@ class SignUpNameViewController: UIViewController, UITextFieldDelegate {
     }
 
     private let nameTextField = PMTextField(type: .name)
-    
     private let nextButton = PMButton(type: .next)
-//    private let nextButton = PMButton().then {
-//        $0.isEnabled = false
-//        $0.backgroundColor = UIColor(named: "gray4")
-//        $0.setTitle("다음", for: .normal)
-//    }
     
     override func viewDidLoad() {
         super.viewDidLoad()

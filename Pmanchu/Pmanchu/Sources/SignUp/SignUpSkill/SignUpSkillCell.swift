@@ -4,44 +4,52 @@ import Then
 
 class SignUpSkillCell: UITableViewCell {
     
+    var deleteButtonClick: ((Bool) -> Void)?
+    
     static let check = "SignUpSkillCell"
     
-    private let skillLabel = UILabel().then {
-        $0.textColor = UIColor(named: "gray5")
-        $0.layer.cornerRadius = 5
-        $0.layer.masksToBounds = true
-        $0.backgroundColor = UIColor(named: "gray1")
-        $0.textAlignment = .left
-        $0.layer.borderColor = UIColor(named: "gray2")?.cgColor
-        $0.layer.borderWidth = 1
-        $0.font = UIFont.systemFont(ofSize: 16, weight: .regular)
-        $0.textColor = .black
-        $0.isUserInteractionEnabled = false
-    }
+    private let stackcellTextField = PMTextField(type: .stackCell)
+    private let deleteButton = PMButton(type: .delete)
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        contentView.addSubview(skillLabel)
         
+        attribute()
+        addView()
         layout()
-        self.isUserInteractionEnabled = false
-    }
-    
-    func layout() {
-        skillLabel.snp.makeConstraints {
-            $0.edges.equalToSuperview().inset(UIEdgeInsets(top: 8, left: 0, bottom: 8, right: 0))
-            
-            $0.leading.trailing.equalToSuperview().inset(27)
-            $0.width.equalTo(339)
-            $0.height.equalTo(45)
-        }
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
+    func attribute() {
+        self.isUserInteractionEnabled = false
+        deleteButton.button.addTarget(self, action: #selector(deleteButtonTapped), for: .touchUpInside)
+    }
+    
+    func addView() {
+        contentView.addSubview(stackcellTextField)
+        stackcellTextField.addSubview(deleteButton)
+    }
+    
+    func layout() {
+        stackcellTextField.snp.makeConstraints {
+            $0.edges.equalToSuperview()
+            $0.height.equalTo(45)
+            $0.edges.equalToSuperview().inset(UIEdgeInsets(top: 14, left: 0, bottom: 8, right: 0))
+        }
+        deleteButton.snp.makeConstraints {
+            $0.centerY.equalToSuperview()
+            $0.trailing.equalToSuperview().inset(12)
+        }
+    }
+    
+    @objc func deleteButtonTapped() {
+        deleteButtonClick?(true)
+    }
+    
     func configure(with skill: String) {
-        skillLabel.text = skill
+        stackcellTextField.textField.text = skill
     }
 }
