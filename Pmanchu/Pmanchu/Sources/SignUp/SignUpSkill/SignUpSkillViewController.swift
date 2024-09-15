@@ -89,9 +89,7 @@ class SignUpSkillViewController: UIViewController {
     }
     
     @objc private func nextButtonTapped() {
-        
         let signUpMajorVC = SignUpMajorViewController()
-        
         navigationController?.pushViewController(signUpMajorVC, animated: true)
     }
     
@@ -107,6 +105,7 @@ class SignUpSkillViewController: UIViewController {
 }
 
 extension SignUpSkillViewController: UITableViewDelegate, UITableViewDataSource {
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return stackList.count
     }
@@ -114,6 +113,24 @@ extension SignUpSkillViewController: UITableViewDelegate, UITableViewDataSource 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: SignUpSkillCell.check, for: indexPath) as! SignUpSkillCell
         cell.configure(with: stackList[indexPath.row])
+        
+        
+        cell.deleteButtonTap = { [weak self] in
+            guard let self = self else { return }
+            
+            
+            guard indexPath.row < self.stackList.count else { return }
+            
+            
+            self.tableview.performBatchUpdates {
+                self.stackList.remove(at: indexPath.row)
+                self.tableview.deleteRows(at: [indexPath], with: .automatic)
+            } completion: { _ in
+                
+                self.nextButtonLife()
+            }
+        }
+        
         return cell
     }
 }

@@ -4,7 +4,8 @@ import Then
 
 class SignUpSkillCell: UITableViewCell {
     
-    var deleteButtonClick: ((Bool) -> Void)?
+    
+    var deleteButtonTap: (() -> Void)?
     
     static let check = "SignUpSkillCell"
     
@@ -23,17 +24,17 @@ class SignUpSkillCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func attribute() {
-        self.isUserInteractionEnabled = false
+    private func attribute() {
+        self.isUserInteractionEnabled = true
         deleteButton.button.addTarget(self, action: #selector(deleteButtonTapped), for: .touchUpInside)
     }
     
-    func addView() {
+    private func addView() {
         contentView.addSubview(stackcellTextField)
         stackcellTextField.addSubview(deleteButton)
     }
     
-    func layout() {
+    private func layout() {
         stackcellTextField.snp.makeConstraints {
             $0.edges.equalToSuperview()
             $0.height.equalTo(45)
@@ -45,8 +46,8 @@ class SignUpSkillCell: UITableViewCell {
         }
     }
     
-    @objc func deleteButtonTapped() {
-        deleteButtonClick?(true)
+    @objc private func deleteButtonTapped() {
+        deleteButtonTap?()
     }
     
     func configure(with skill: String) {
