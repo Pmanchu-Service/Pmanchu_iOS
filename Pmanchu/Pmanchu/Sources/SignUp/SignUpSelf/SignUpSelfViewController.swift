@@ -8,12 +8,7 @@ class SignUpSelfViewController: UIViewController, UITextViewDelegate {
     private let titleLabel = PMSignUpLabel(type: .intro)
     private let simpleTextField = PMTextField(type: .simpleintro)
     private let complexTextView = PMTextView(type: .complexintro)
-    
-    private let nextButton = PMButton().then {
-        $0.isEnabled = false
-        $0.backgroundColor = UIColor(named: "gray4")
-        $0.setTitle("다음", for: .normal)
-    }
+    private let nextButton = PMButton(type: .next)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,7 +25,7 @@ class SignUpSelfViewController: UIViewController, UITextViewDelegate {
     }
     
     private func attribute() {
-        nextButton.addTarget(self, action: #selector(buttonTapped), for: .touchUpInside)
+        nextButton.button.addTarget(self, action: #selector(buttonTapped), for: .touchUpInside)
         simpleTextField.textField.addTarget(self, action: #selector(textFieldsDidChange), for: .editingChanged)
     }
     
@@ -87,11 +82,11 @@ class SignUpSelfViewController: UIViewController, UITextViewDelegate {
         let ComplexTextViewFill = !(complexTextView.textView.text ?? "").isEmpty
         
         if SimpleTextFieldFill && ComplexTextViewFill {
-            nextButton.isEnabled = true
-            nextButton.backgroundColor = UIColor(named: "main2")
+            nextButton.button.isEnabled = true
+            nextButton.button.backgroundColor = UIColor(named: "main2")
         } else {
-            nextButton.isEnabled = false
-            nextButton.backgroundColor = UIColor(named: "gray4")
+            nextButton.button.isEnabled = false
+            nextButton.button.backgroundColor = UIColor(named: "gray4")
         }
     }
 }

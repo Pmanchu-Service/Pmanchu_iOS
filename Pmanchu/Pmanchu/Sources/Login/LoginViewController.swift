@@ -53,8 +53,7 @@ class LoginViewController: UIViewController {
         $0.tintColor = .white
         $0.semanticContentAttribute = .forceLeftToRight
         $0.contentHorizontalAlignment = .center
-        $0.imageEdgeInsets = UIEdgeInsets(top: 0, left: -12, bottom: 0, right: 0)
-    }
+            }
 
     
     
@@ -65,9 +64,14 @@ class LoginViewController: UIViewController {
         view.backgroundColor = .white
         addView()
         layout()
+        attribute()
     }
     
     
+    
+    func attribute() {
+        loginButton.imageEdgeInsets = UIEdgeInsets(top: 0, left: -12, bottom: 0, right: 0)
+    }
     
     
     func addView() {
@@ -101,7 +105,7 @@ class LoginViewController: UIViewController {
         
         
         loginButton.snp.makeConstraints {
-            $0.top.equalTo(recommendLabel.snp.bottom).offset(470)
+            $0.top.equalTo(727)
             $0.leading.trailing.equalToSuperview().inset(24)
             $0.width.equalTo(345)
             $0.height.equalTo(65)
