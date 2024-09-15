@@ -156,7 +156,6 @@
 				6FB81AB12C91F98B0060CB73 /* App */,
 				6FB81AAE2C91F9370060CB73 /* Sources */,
 				6FB81AAF2C91F9760060CB73 /* Resources */,
-				6FB81AA82C91F8C30060CB73 /* Info.plist */,
 			);
 			path = Pmanchu;
 			sourceTree = "<group>";
@@ -173,6 +172,7 @@
 		6FB81AAF2C91F9760060CB73 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				6FB81AA82C91F8C30060CB73 /* Info.plist */,
 				8839A8F52C95B2F200BCA2AD /* Assets.xcassets */,
 				6FB81AA52C91F8C30060CB73 /* LaunchScreen.storyboard */,
 			);
@@ -457,7 +457,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Pmanchu/Info.plist;
+				INFOPLIST_FILE = Pmanchu/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -483,7 +483,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Pmanchu/Info.plist;
+				INFOPLIST_FILE = Pmanchu/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
