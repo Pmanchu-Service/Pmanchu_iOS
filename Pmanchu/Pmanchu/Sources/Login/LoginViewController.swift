@@ -54,7 +54,6 @@ class LoginViewController: UIViewController {
         $0.semanticContentAttribute = .forceLeftToRight
         $0.contentHorizontalAlignment = .center
             }
-
     
     
     
