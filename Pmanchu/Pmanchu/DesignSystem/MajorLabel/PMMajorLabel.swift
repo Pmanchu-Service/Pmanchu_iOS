@@ -46,6 +46,7 @@ enum MLType {
 
 
 class PMMajorLabel: UIView {
+    
     let checkBox = UIImageView().then {
         $0.image = UIImage(named: "checkBoxFalse")
         $0.isUserInteractionEnabled = true
