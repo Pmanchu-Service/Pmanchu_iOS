@@ -42,11 +42,51 @@ enum MLType {
             return "AI"
         }
     }
-    
-    
-    
-    class PMMajorLabel: UILabel {
-        
-        
-    }
 }
+
+
+class PMMajorLabel: UIView {
+    let checkBox = UIImageView().then {
+        $0.image = UIImage(named: "checkBoxFalse")
+        $0.isUserInteractionEnabled = true
+        $0.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(checkBoxTapped)))
+    }
+    
+    let majorLabel = UILabel()
+    
+    init(type: MLType) {
+        super.init(frame: .zero)
+        majorLabel.text = type.text
+        
+        addView()
+        layout()
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    func addView() {
+        [
+            checkBox,
+            majorLabel
+        ].forEach{ self.addSubview($0) }
+    }
+    
+    func layout() {
+        checkBox.snp.makeConstraints {
+            $0.centerY.equalToSuperview()
+            $0.trailing.equalToSuperview()
+        }
+        majorLabel.snp.makeConstraints {
+            $0.centerY.equalToSuperview()
+            $0.leading.equalTo(checkBox.snp.trailing).offset(9)
+        }
+    }
+    
+    @objc func checkBoxTapped() {
+        checkBox.image = UIImage(named: "checkBoxTrue")
+    }
+    
+}
+

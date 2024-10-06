@@ -23,6 +23,7 @@
 		8839A8F62C95B2F300BCA2AD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8839A8F52C95B2F200BCA2AD /* Assets.xcassets */; };
 		8839A8F82C95B85100BCA2AD /* SignUpSkillCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8839A8F72C95B85100BCA2AD /* SignUpSkillCell.swift */; };
 		8860D2D02C93E28900D4756A /* PMSignUpLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8860D2CF2C93E28900D4756A /* PMSignUpLabel.swift */; };
+		88B57F132CB2AB02009925E1 /* SignUpMajorCheckView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B57F122CB2AB02009925E1 /* SignUpMajorCheckView.swift */; };
 		88EBD6EF2C945370006C70CE /* PMTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88EBD6EE2C945370006C70CE /* PMTextField.swift */; };
 		88EBD6F22C9467A6006C70CE /* PMTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88EBD6F12C9467A6006C70CE /* PMTextView.swift */; };
 /* End PBXBuildFile section */
@@ -44,6 +45,7 @@
 		8839A8F52C95B2F200BCA2AD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8839A8F72C95B85100BCA2AD /* SignUpSkillCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpSkillCell.swift; sourceTree = "<group>"; };
 		8860D2CF2C93E28900D4756A /* PMSignUpLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PMSignUpLabel.swift; sourceTree = "<group>"; };
+		88B57F122CB2AB02009925E1 /* SignUpMajorCheckView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpMajorCheckView.swift; sourceTree = "<group>"; };
 		88EBD6EE2C945370006C70CE /* PMTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PMTextField.swift; sourceTree = "<group>"; };
 		88EBD6F12C9467A6006C70CE /* PMTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PMTextView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -129,6 +131,7 @@
 			isa = PBXGroup;
 			children = (
 				6F8AAC852C95F23D00077431 /* SignUpMajorViewController.swift */,
+				88B57F122CB2AB02009925E1 /* SignUpMajorCheckView.swift */,
 			);
 			path = SignUpMajor;
 			sourceTree = "<group>";
@@ -153,8 +156,8 @@
 			isa = PBXGroup;
 			children = (
 				6F3DA9EA2C92BA9500F06971 /* DesignSystem */,
-				6FB81AB12C91F98B0060CB73 /* App */,
 				6FB81AAE2C91F9370060CB73 /* Sources */,
+				6FB81AB12C91F98B0060CB73 /* App */,
 				6FB81AAF2C91F9760060CB73 /* Resources */,
 			);
 			path = Pmanchu;
@@ -300,6 +303,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6FD661102C94467F00393F49 /* SignUpSkillViewController.swift in Sources */,
+				88B57F132CB2AB02009925E1 /* SignUpMajorCheckView.swift in Sources */,
 				6FB81AB32C91FA280060CB73 /* LoginViewController.swift in Sources */,
 				88EBD6EF2C945370006C70CE /* PMTextField.swift in Sources */,
 				6FB81A9F2C91F8C20060CB73 /* SignUpNameViewController.swift in Sources */,
