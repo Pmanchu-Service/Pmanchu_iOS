@@ -36,7 +36,12 @@ class SignUpMajorCheckView: UIView {
             $0.leading.equalToSuperview().inset(26)
         }
         
-        [leftStackView, rightStackView].forEach {
+        [
+            leftStackView,
+            rightStackView
+            
+        ].forEach {
+            
             $0.axis = .vertical
             $0.distribution = .fillEqually
             $0.spacing = 30

@@ -48,10 +48,12 @@ enum MLType {
 class PMMajorLabel: UIView {
     
     let checkBox = UIImageView().then {
-        $0.image = UIImage(named: "checkBoxFalse")
+        $0.image = UIImage(named: "checkBoxTrue")
         $0.isUserInteractionEnabled = true
         $0.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(checkBoxTapped)))
     }
+    
+
     
     let majorLabel = UILabel()
     
