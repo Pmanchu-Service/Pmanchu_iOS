@@ -48,19 +48,19 @@ enum MLType {
 class PMMajorLabel: UIView {
     
     let checkBox = UIImageView().then {
-        $0.image = UIImage(named: "checkBoxTrue")
+        $0.image = UIImage(named: "checkBoxFalse")
         $0.isUserInteractionEnabled = true
-        $0.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(checkBoxTapped)))
     }
     
-
-    
     let majorLabel = UILabel()
-    
+
     init(type: MLType) {
         super.init(frame: .zero)
-        majorLabel.text = type.text
         
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(checkBoxTapped))
+        checkBox.addGestureRecognizer(tapGesture)
+        
+        majorLabel.text = type.text
         addView()
         layout()
     }
@@ -68,6 +68,8 @@ class PMMajorLabel: UIView {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    
     
     func addView() {
         [
@@ -89,7 +91,9 @@ class PMMajorLabel: UIView {
     
     @objc func checkBoxTapped() {
         checkBox.image = UIImage(named: "checkBoxTrue")
+        setNeedsLayout()
     }
+
     
 }
 

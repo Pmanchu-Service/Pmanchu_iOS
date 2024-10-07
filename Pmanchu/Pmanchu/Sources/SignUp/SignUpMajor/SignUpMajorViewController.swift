@@ -11,23 +11,34 @@ class SignUpMajorViewController: UIViewController {
     
     private let majorCheckView = SignUpMajorCheckView()
     
+    private let nextButton = PMButton(type: .next)
+    
     override func viewDidLoad() {
         view.backgroundColor = .white
         attribute()
         addview()
         layout()
+        navigationItem.hidesBackButton = true
     }
     
     
     private func attribute() {
         navigationItem.hidesBackButton = true
+        nextButton.button.addTarget(self, action: #selector(nextButtonTapped), for: .touchUpInside)
+       
     }
+    
+    @objc private func nextButtonTapped() {
+        navigationController?.pushViewController(MainViewController(), animated: true)
+    }
+
     
     
     private func addview() {
         [
             titleLabel,
-            majorCheckView
+            majorCheckView,
+            nextButton
         ].forEach { view.addSubview($0) }
     }
     
@@ -40,6 +51,14 @@ class SignUpMajorViewController: UIViewController {
             $0.top.equalTo(titleLabel.detailLabel.snp.bottom).offset(57)
             $0.leading.trailing.equalToSuperview().inset(27)
         }
+        
+        
+        nextButton.snp.makeConstraints {
+            $0.bottom.equalTo(view.safeAreaLayoutGuide).inset(20)
+            $0.leading.trailing.equalToSuperview().inset(24)
+            $0.height.equalTo(65)
+        }
+
     }
     
 }
