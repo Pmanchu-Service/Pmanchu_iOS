@@ -6,6 +6,8 @@ import Foundation
 
 class SignUpNameViewController: UIViewController, UITextFieldDelegate {
     
+//    private let viewModel = LoginViewModel()
+//    private let disposeBag = DisposeBag
     private let titleLabel = PMSignUpLabel(type: .name)
     
     let imagePicker = UIImagePickerController()
@@ -92,7 +94,6 @@ class SignUpNameViewController: UIViewController, UITextFieldDelegate {
         }
     }
     
-
     @objc func pickImage() {
         self.present(self.imagePicker, animated: true)
     }

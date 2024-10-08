@@ -45,10 +45,10 @@ enum MLType {
 }
 
 
-class PMMajorLabel: UIView {
+class PMMajorView: UIView {
     
-    let checkBox = UIImageView().then {
-        $0.image = UIImage(named: "checkBoxFalse")
+    let checkBox = UIButton().then {
+        $0.setImage(.checkBoxFalse, for: .normal)
         $0.isUserInteractionEnabled = true
     }
     
@@ -90,10 +90,8 @@ class PMMajorLabel: UIView {
     }
     
     @objc func checkBoxTapped() {
-        checkBox.image = UIImage(named: "checkBoxTrue")
-        setNeedsLayout()
+//        checkBox.setImage(, for: <#T##UIControl.State#>)
     }
-
     
 }
 

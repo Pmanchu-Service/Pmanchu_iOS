@@ -52,12 +52,12 @@ class SignUpMajorCheckView: UIView {
     private func addMajorLabels() {
     
         majorsLeft.forEach { major in
-            let majorLabel = PMMajorLabel(type: major)
+            let majorLabel = PMMajorView(type: major)
             leftStackView.addArrangedSubview(majorLabel)
         }
 
         majorsRight.forEach { major in
-            let majorLabel = PMMajorLabel(type: major)
+            let majorLabel = PMMajorView(type: major)
             rightStackView.addArrangedSubview(majorLabel)
         }
     }
