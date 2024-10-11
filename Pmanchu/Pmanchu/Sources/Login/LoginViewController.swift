@@ -40,8 +40,6 @@ class LoginViewController: UIViewController {
         return label
     }()
 
-    
-    
     private let loginButton = UIButton().then {
         $0.setTitle("github로 로그인하기", for: .normal)
         $0.setImage(UIImage(named: "github"), for: .normal)
@@ -53,11 +51,7 @@ class LoginViewController: UIViewController {
         $0.tintColor = .white
         $0.semanticContentAttribute = .forceLeftToRight
         $0.contentHorizontalAlignment = .center
-            }
-    
-    
-    
-    
+    }
     
     override func viewDidLoad() {
         view.backgroundColor = .white
@@ -66,13 +60,12 @@ class LoginViewController: UIViewController {
         attribute()
     }
     
-    
-    
     func attribute() {
+        navigationItem.hidesBackButton = true
         loginButton.imageEdgeInsets = UIEdgeInsets(top: 0, left: -12, bottom: 0, right: 0)
+        loginButton.addTarget(self, action: #selector(loginButtonTapped), for: .touchUpInside)
     }
-    
-    
+
     func addView() {
         [
             logoimage,
@@ -81,9 +74,7 @@ class LoginViewController: UIViewController {
             loginButton
         ].forEach { view.addSubview($0) }
     }
-    
-    
-    
+
     func layout() {
         logoimage.snp.makeConstraints {
             $0.top.equalTo(view.safeAreaLayoutGuide).inset(60)
@@ -91,18 +82,14 @@ class LoginViewController: UIViewController {
             $0.width.equalTo(155)
             $0.height.equalTo(61)
         }
-        
         loginLabel.snp.makeConstraints {
             $0.top.equalTo(logoimage.snp.bottom).offset(15)
             $0.leading.equalTo(33)
         }
-        
         recommendLabel.snp.makeConstraints {
             $0.top.equalTo(loginLabel.snp.bottom).offset(8)
             $0.leading.equalTo(33)
         }
-        
-        
         loginButton.snp.makeConstraints {
             $0.top.equalTo(727)
             $0.leading.trailing.equalToSuperview().inset(24)
@@ -111,4 +98,7 @@ class LoginViewController: UIViewController {
         }
     }
     
+    @objc private func loginButtonTapped() {
+        self.navigationController?.pushViewController(SignUpNameViewController(), animated: true)
+    }
 }

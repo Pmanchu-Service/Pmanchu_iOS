@@ -45,29 +45,26 @@ enum MLType {
 }
 
 
-class PMMajorButton: UIView {
+class PMMajorButton: UIButton {
     
     let checkBox = UIButton().then {
         $0.layer.borderWidth = 2
         $0.layer.borderColor = UIColor(named: "gray8")?.cgColor
         $0.layer.cornerRadius = 3
-        $0.isUserInteractionEnabled = true
+        $0.isUserInteractionEnabled = false
     }
     
     let majorLabel = UILabel().then {
         $0.font = .systemFont(ofSize: 20)
+        $0.isUserInteractionEnabled = false
     }
-    
-    var checkBoxButtonTapped: (() -> Void)?
     
     init(type: MLType) {
         super.init(frame: .zero)
         
         majorLabel.text = type.text
-        checkBox.addTarget(self, action: #selector(didTapCheckBox), for: .touchUpInside)
-        
-        isUserInteractionEnabled = true
         backgroundColor = .yellow
+        self.addTarget(self, action: #selector(checkBoxTapped), for: .touchUpInside)
         
         addView()
         layout()
@@ -99,15 +96,12 @@ class PMMajorButton: UIView {
             $0.width.equalTo(135)
         }
     }
-    
-    @objc private func didTapCheckBox() {
-        checkBoxButtonTapped?() // 이벤트 전달
-    }
-    
+
     @objc func checkBoxTapped() {
         self.backgroundColor = .red
         print("클릭됨")
     }
+    
     
 }
 

@@ -12,8 +12,6 @@ class SignUpSelfViewController: UIViewController, UITextViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .white
-        navigationItem.hidesBackButton = true
         
         addView()
         layout()
@@ -25,6 +23,8 @@ class SignUpSelfViewController: UIViewController, UITextViewDelegate {
     }
     
     private func attribute() {
+        view.backgroundColor = .white
+        navigationItem.hidesBackButton = true
         nextButton.button.addTarget(self, action: #selector(buttonTapped), for: .touchUpInside)
         simpleTextField.textField.addTarget(self, action: #selector(textFieldsDidChange), for: .editingChanged)
     }
@@ -83,7 +83,7 @@ class SignUpSelfViewController: UIViewController, UITextViewDelegate {
         
         if SimpleTextFieldFill && ComplexTextViewFill {
             nextButton.button.isEnabled = true
-            nextButton.button.backgroundColor = UIColor(named: "main2")
+            nextButton.button.backgroundColor = UIColor(named: "main5")
         } else {
             nextButton.button.isEnabled = false
             nextButton.button.backgroundColor = UIColor(named: "gray4")

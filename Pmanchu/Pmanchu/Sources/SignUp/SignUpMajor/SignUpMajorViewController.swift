@@ -6,33 +6,27 @@ import Then
 
 class SignUpMajorViewController: UIViewController {
     
-    
     private let titleLabel = PMSignUpLabel(type: .major)
-    
     private let majorCheckView = SignUpMajorCheckView()
-    
     private let nextButton = PMButton(type: .next)
     
     override func viewDidLoad() {
-        view.backgroundColor = .white
+        super.viewDidLoad()
+        
         attribute()
         addview()
         layout()
-        navigationItem.hidesBackButton = true
     }
     
-    
     private func attribute() {
+        view.backgroundColor = .white
         navigationItem.hidesBackButton = true
         nextButton.button.addTarget(self, action: #selector(nextButtonTapped), for: .touchUpInside)
-       
     }
     
     @objc private func nextButtonTapped() {
         navigationController?.pushViewController(MainViewController(), animated: true)
     }
-
-    
     
     private func addview() {
         [
@@ -49,16 +43,12 @@ class SignUpMajorViewController: UIViewController {
         }
         majorCheckView.snp.makeConstraints {
             $0.top.equalTo(titleLabel.detailLabel.snp.bottom).offset(57)
-            $0.leading.trailing.equalToSuperview().inset(27)
+            $0.leading.trailing.equalToSuperview().inset(11)
         }
-        
-        
         nextButton.snp.makeConstraints {
             $0.bottom.equalTo(view.safeAreaLayoutGuide).inset(20)
             $0.leading.trailing.equalToSuperview().inset(24)
             $0.height.equalTo(65)
         }
-
     }
-    
 }

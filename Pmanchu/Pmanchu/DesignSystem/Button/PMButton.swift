@@ -18,7 +18,7 @@ enum BtType {
 
 class PMButton: UIView {
     let button = UIButton().then {
-        $0.backgroundColor = UIColor(named: "main2")
+        $0.backgroundColor = UIColor(named: "main5")
         $0.setTitleColor(UIColor.white, for: .normal)
     }
     
