@@ -25,7 +25,7 @@ class PMSignUpLabel: UIView {
     
     let pmanchuLabel = UILabel().then {
         $0.text = "프만추"
-        $0.textColor = UIColor(named: "main2")
+        $0.textColor = UIColor(named: "main5")
         $0.font = .systemFont(ofSize: 36, weight: .bold)
     }
     

@@ -16,6 +16,9 @@ class SignUpMajorCheckView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
+        
+        isUserInteractionEnabled = true
+        
         setupView()
         addMajorLabels()
     }
@@ -27,13 +30,13 @@ class SignUpMajorCheckView: UIView {
     private func setupView() {
         let horizontalStackView = UIStackView(arrangedSubviews: [leftStackView, rightStackView])
         horizontalStackView.axis = .horizontal
-        horizontalStackView.distribution = .fillEqually
-        horizontalStackView.spacing = 200
-
+        horizontalStackView.distribution = .fill
+        horizontalStackView.spacing = 68
+        
         addSubview(horizontalStackView)
-
+        
         horizontalStackView.snp.makeConstraints {
-            $0.leading.equalToSuperview().inset(26)
+            $0.leading.equalToSuperview().inset(25)
         }
         
         [
@@ -41,24 +44,22 @@ class SignUpMajorCheckView: UIView {
             rightStackView
             
         ].forEach {
-            
             $0.axis = .vertical
-            $0.distribution = .fillEqually
-            $0.spacing = 30
+            $0.distribution = .fill
+            $0.spacing = 10
         }
-        
     }
     
     private func addMajorLabels() {
-    
+        
         majorsLeft.forEach { major in
-            let majorLabel = PMMajorView(type: major)
-            leftStackView.addArrangedSubview(majorLabel)
+            let majorButton = PMMajorButton(type: major)
+            leftStackView.addArrangedSubview(majorButton)
         }
-
+        
         majorsRight.forEach { major in
-            let majorLabel = PMMajorView(type: major)
-            rightStackView.addArrangedSubview(majorLabel)
+            let majorButton = PMMajorButton(type: major)
+            rightStackView.addArrangedSubview(majorButton)
         }
     }
 }

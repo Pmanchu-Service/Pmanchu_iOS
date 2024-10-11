@@ -28,17 +28,16 @@ class SignUpNameViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .white
         
         attribute()
         addView()
         layout()
-        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(pickImage))
-        profileImageView.addGestureRecognizer(tapGesture)
     }
     
     private func attribute(){
-       
+        view.backgroundColor = .white
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(pickImage))
+        profileImageView.addGestureRecognizer(tapGesture)
         
         self.imagePicker.sourceType = .photoLibrary
         self.imagePicker.allowsEditing = true
@@ -86,7 +85,7 @@ class SignUpNameViewController: UIViewController, UITextFieldDelegate {
 
     @objc func textFieldDidChange(_ textField: UITextField) {
         if let text = textField.text, !text.isEmpty {
-            nextButton.button.backgroundColor = UIColor(named: "main2")
+            nextButton.button.backgroundColor = UIColor(named: "main5")
             nextButton.button.isEnabled = true
         } else {
             nextButton.button.backgroundColor = UIColor(named: "gray4")

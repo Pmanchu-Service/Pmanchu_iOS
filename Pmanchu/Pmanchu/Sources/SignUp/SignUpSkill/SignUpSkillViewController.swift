@@ -99,7 +99,7 @@ class SignUpSkillViewController: UIViewController {
             nextButton.button.backgroundColor = UIColor.gray4
         } else {
             nextButton.button.isEnabled = true
-            nextButton.button.backgroundColor = UIColor.main2
+            nextButton.button.backgroundColor = UIColor.main5
         }
     }
 }
@@ -118,9 +118,7 @@ extension SignUpSkillViewController: UITableViewDelegate, UITableViewDataSource 
         cell.deleteButtonTap = { [weak self] in
             guard let self = self else { return }
             
-            
             guard indexPath.row < self.stackList.count else { return }
-            
             
             self.tableview.performBatchUpdates {
                 self.stackList.remove(at: indexPath.row)

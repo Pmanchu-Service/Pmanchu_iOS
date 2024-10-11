@@ -45,22 +45,27 @@ enum MLType {
 }
 
 
-class PMMajorView: UIView {
+class PMMajorButton: UIButton {
     
     let checkBox = UIButton().then {
-        $0.setImage(.checkBoxFalse, for: .normal)
-        $0.isUserInteractionEnabled = true
+        $0.layer.borderWidth = 2
+        $0.layer.borderColor = UIColor(named: "gray8")?.cgColor
+        $0.layer.cornerRadius = 3
+        $0.isUserInteractionEnabled = false
     }
     
-    let majorLabel = UILabel()
-
+    let majorLabel = UILabel().then {
+        $0.font = .systemFont(ofSize: 20)
+        $0.isUserInteractionEnabled = false
+    }
+    
     init(type: MLType) {
         super.init(frame: .zero)
         
-        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(checkBoxTapped))
-        checkBox.addGestureRecognizer(tapGesture)
-        
         majorLabel.text = type.text
+        backgroundColor = .yellow
+        self.addTarget(self, action: #selector(checkBoxTapped), for: .touchUpInside)
+        
         addView()
         layout()
     }
@@ -68,8 +73,6 @@ class PMMajorView: UIView {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
-    
     
     func addView() {
         [
@@ -81,17 +84,24 @@ class PMMajorView: UIView {
     func layout() {
         checkBox.snp.makeConstraints {
             $0.centerY.equalToSuperview()
-            $0.trailing.equalToSuperview()
+            $0.leading.equalToSuperview()
+            $0.height.width.equalTo(20)
         }
         majorLabel.snp.makeConstraints {
             $0.centerY.equalToSuperview()
-            $0.leading.equalTo(checkBox.snp.trailing).offset(9)
+            $0.leading.equalToSuperview().offset(30)
+        }
+        self.snp.makeConstraints {
+            $0.height.equalTo(29)
+            $0.width.equalTo(135)
         }
     }
-    
+
     @objc func checkBoxTapped() {
-//        checkBox.setImage(, for: <#T##UIControl.State#>)
+        self.backgroundColor = .red
+        print("클릭됨")
     }
+    
     
 }
 
