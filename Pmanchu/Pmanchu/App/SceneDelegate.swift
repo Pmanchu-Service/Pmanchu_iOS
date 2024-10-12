@@ -16,7 +16,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
            guard let windowScene = (scene as? UIWindowScene) else { return }
            window = UIWindow(frame: windowScene.coordinateSpace.bounds)
            window?.windowScene = windowScene
-        let navigationController = UINavigationController(rootViewController: TapBarViewController())
+        let navigationController = UINavigationController(rootViewController: SignUpMajorViewController())
            window?.rootViewController = navigationController
            window?.makeKeyAndVisible()
        }
