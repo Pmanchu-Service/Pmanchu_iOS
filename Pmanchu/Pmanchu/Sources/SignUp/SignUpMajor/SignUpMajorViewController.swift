@@ -25,7 +25,7 @@ class SignUpMajorViewController: UIViewController, UICollectionViewDelegate, UIC
         collectionView.collectionViewLayout = layout1
             collectionView.isScrollEnabled = false
         
-        let itemWidth1 = (view.frame.width - 26 * 2 - 10) / 2  row
+        let itemWidth1 = (view.frame.width - 26 * 2 - 10) / 2
         layout1.itemSize = CGSize(width: itemWidth1, height: 40)
         
         attribute()
