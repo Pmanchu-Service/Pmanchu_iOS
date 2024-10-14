@@ -30,7 +30,7 @@
 		8839A8F62C95B2F300BCA2AD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8839A8F52C95B2F200BCA2AD /* Assets.xcassets */; };
 		8839A8F82C95B85100BCA2AD /* SignUpSkillCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8839A8F72C95B85100BCA2AD /* SignUpSkillCell.swift */; };
 		8860D2D02C93E28900D4756A /* PMSignUpLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8860D2CF2C93E28900D4756A /* PMSignUpLabel.swift */; };
-		88AD03B62CB8B5BA002B0A15 /* TapBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88AD03B52CB8B5A3002B0A15 /* TapBarViewController.swift */; };
+		88AD03B62CB8B5BA002B0A15 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88AD03B52CB8B5A3002B0A15 /* TabBarController.swift */; };
 		88B57F132CB2AB02009925E1 /* SignUpMajorCheckView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B57F122CB2AB02009925E1 /* SignUpMajorCheckView.swift */; };
 		88EBD6EF2C945370006C70CE /* PMTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88EBD6EE2C945370006C70CE /* PMTextField.swift */; };
 		88EBD6F22C9467A6006C70CE /* PMTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88EBD6F12C9467A6006C70CE /* PMTextView.swift */; };
@@ -60,7 +60,7 @@
 		8839A8F52C95B2F200BCA2AD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8839A8F72C95B85100BCA2AD /* SignUpSkillCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpSkillCell.swift; sourceTree = "<group>"; };
 		8860D2CF2C93E28900D4756A /* PMSignUpLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PMSignUpLabel.swift; sourceTree = "<group>"; };
-		88AD03B52CB8B5A3002B0A15 /* TapBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TapBarViewController.swift; sourceTree = "<group>"; };
+		88AD03B52CB8B5A3002B0A15 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		88B57F122CB2AB02009925E1 /* SignUpMajorCheckView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpMajorCheckView.swift; sourceTree = "<group>"; };
 		88EBD6EE2C945370006C70CE /* PMTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PMTextField.swift; sourceTree = "<group>"; };
 		88EBD6F12C9467A6006C70CE /* PMTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PMTextView.swift; sourceTree = "<group>"; };
@@ -275,7 +275,7 @@
 		88AD03B42CB8B58E002B0A15 /* TapBar */ = {
 			isa = PBXGroup;
 			children = (
-				88AD03B52CB8B5A3002B0A15 /* TapBarViewController.swift */,
+				88AD03B52CB8B5A3002B0A15 /* TabBarController.swift */,
 			);
 			path = TapBar;
 			sourceTree = "<group>";
@@ -383,7 +383,7 @@
 				883935222CB8FD1E00363873 /* HeartViewController.swift in Sources */,
 				6FB81A9F2C91F8C20060CB73 /* SignUpNameViewController.swift in Sources */,
 				6F3DA9FD2C9301BD00F06971 /* SignUpSelfViewController.swift in Sources */,
-				88AD03B62CB8B5BA002B0A15 /* TapBarViewController.swift in Sources */,
+				88AD03B62CB8B5BA002B0A15 /* TabBarController.swift in Sources */,
 				8839352C2CB9669300363873 /* MajorCell.swift in Sources */,
 				8839352A2CB90B0000363873 /* AlertViewController.swift in Sources */,
 				8839351F2CB8FCC100363873 /* UserSearchViewController.swift in Sources */,

@@ -44,7 +44,7 @@ class SignUpMajorViewController: UIViewController, UICollectionViewDelegate, UIC
     }
     
     @objc private func nextButtonTapped() {
-        navigationController?.pushViewController(TapBarViewController(), animated: true)
+        navigationController?.pushViewController(TabBarController(), animated: true)
     }
     
     private func addview() {
