@@ -20,7 +20,7 @@
 		6FD661102C94467F00393F49 /* SignUpSkillViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FD6610F2C94467F00393F49 /* SignUpSkillViewController.swift */; };
 		6FDB2CA12C96C352006E25E7 /* PMMajorButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FDB2CA02C96C352006E25E7 /* PMMajorButton.swift */; };
 		6FDC36C52CB41E4A008A0FD3 /* SignUpNameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FDC36C42CB41E3B008A0FD3 /* SignUpNameViewModel.swift */; };
-		6FDFAA062CB3F14E0066725A /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FDFAA052CB3F1400066725A /* MainViewController.swift */; };
+		6FDFAA062CB3F14E0066725A /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FDFAA052CB3F1400066725A /* HomeViewController.swift */; };
 		8839351F2CB8FCC100363873 /* UserSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8839351E2CB8FCB900363873 /* UserSearchViewController.swift */; };
 		883935222CB8FD1E00363873 /* HeartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883935212CB8FD1800363873 /* HeartViewController.swift */; };
 		883935272CB8FD3A00363873 /* MyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883935262CB8FD3600363873 /* MyViewController.swift */; };
@@ -50,7 +50,7 @@
 		6FD6610F2C94467F00393F49 /* SignUpSkillViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpSkillViewController.swift; sourceTree = "<group>"; };
 		6FDB2CA02C96C352006E25E7 /* PMMajorButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PMMajorButton.swift; sourceTree = "<group>"; };
 		6FDC36C42CB41E3B008A0FD3 /* SignUpNameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpNameViewModel.swift; sourceTree = "<group>"; };
-		6FDFAA052CB3F1400066725A /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		6FDFAA052CB3F1400066725A /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		8839351E2CB8FCB900363873 /* UserSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSearchViewController.swift; sourceTree = "<group>"; };
 		883935212CB8FD1800363873 /* HeartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeartViewController.swift; sourceTree = "<group>"; };
 		883935262CB8FD3600363873 /* MyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyViewController.swift; sourceTree = "<group>"; };
@@ -235,7 +235,7 @@
 		6FDFAA042CB3F1310066725A /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				6FDFAA052CB3F1400066725A /* MainViewController.swift */,
+				6FDFAA052CB3F1400066725A /* HomeViewController.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -388,7 +388,7 @@
 				8839352A2CB90B0000363873 /* AlertViewController.swift in Sources */,
 				8839351F2CB8FCC100363873 /* UserSearchViewController.swift in Sources */,
 				8839A8F82C95B85100BCA2AD /* SignUpSkillCell.swift in Sources */,
-				6FDFAA062CB3F14E0066725A /* MainViewController.swift in Sources */,
+				6FDFAA062CB3F14E0066725A /* HomeViewController.swift in Sources */,
 				6F8AAC862C95F23D00077431 /* SignUpMajorViewController.swift in Sources */,
 				8839A8F42C95AE5400BCA2AD /* PMButton.swift in Sources */,
 				6FB81A9B2C91F8C20060CB73 /* AppDelegate.swift in Sources */,

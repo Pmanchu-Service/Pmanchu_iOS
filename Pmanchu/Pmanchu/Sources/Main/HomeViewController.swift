@@ -2,15 +2,9 @@ import UIKit
 import SnapKit
 import Then
 
-class MainViewController: UIViewController {
+class HomeViewController: UIViewController {
     
-    private let logoImage = UIImageView().then {
-        $0.image = UIImage(named: "logo")
-    }
-    
-    private let bellButton = UIButton().then {
-        $0.setImage(UIImage(named: "bell"), for: .normal)
-    }
+
     
     public let searchBar = UISearchBar().then {
         $0.searchBarStyle = .prominent
@@ -37,15 +31,9 @@ class MainViewController: UIViewController {
         [
             searchBar
         ].forEach { view.addSubview($0) }
-        navigationItem.leftBarButtonItem = UIBarButtonItem(customView: logoImage)
-        navigationItem.rightBarButtonItem = UIBarButtonItem(customView: bellButton)
     }
     
     private func layout() {
-        logoImage.snp.makeConstraints {
-            $0.height.equalTo(38)
-            $0.width.equalTo(95)
-        }
         searchBar.snp.makeConstraints {
             $0.top.equalTo(view.safeAreaLayoutGuide).inset(20)
             $0.leading.trailing.equalToSuperview().inset(24)

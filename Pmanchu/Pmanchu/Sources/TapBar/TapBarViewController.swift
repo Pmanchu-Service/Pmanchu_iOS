@@ -48,7 +48,7 @@ final class TapBarViewController: UITabBarController{
             selectedImage: UIImage(named: "userSearch")!
         )
         
-        let mainVC = MainViewController()
+        let mainVC = HomeViewController()
         mainVC.tabBarItem = UITabBarItem(
             title: "홈",
             image: UIImage(named: "home")!,
