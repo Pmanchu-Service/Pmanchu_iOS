@@ -3,7 +3,7 @@ import SnapKit
 import Then
 
 
-final class TapBarViewController: UITabBarController{
+final class TabBarController: UITabBarController{
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -48,7 +48,7 @@ final class TapBarViewController: UITabBarController{
             selectedImage: UIImage(named: "userSearch")!
         )
         
-        let mainVC = MainViewController()
+        let mainVC = HomeViewController()
         mainVC.tabBarItem = UITabBarItem(
             title: "홈",
             image: UIImage(named: "home")!,
