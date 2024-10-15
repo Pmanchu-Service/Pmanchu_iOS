@@ -144,6 +144,19 @@
 			path = SignUpSelf;
 			sourceTree = "<group>";
 		};
+		6F58F2822CBE5F8000275EE6 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				883935282CB90AE100363873 /* Alert */,
+				6FDFAA042CB3F1310066725A /* Home */,
+				8839351D2CB8FCA500363873 /* UserSearch */,
+				883935202CB8FD0800363873 /* Heart */,
+				883935252CB8FD2A00363873 /* My */,
+				88AD03B42CB8B58E002B0A15 /* TapBar */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
 		6F5E56D42C95EF1D002AE763 /* SignUpMajor */ = {
 			isa = PBXGroup;
 			children = (
@@ -184,12 +197,7 @@
 		6FB81AAE2C91F9370060CB73 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				883935282CB90AE100363873 /* Alert */,
-				88AD03B42CB8B58E002B0A15 /* TapBar */,
-				6FDFAA042CB3F1310066725A /* Main */,
-				8839351D2CB8FCA500363873 /* UserSearchViewController */,
-				883935202CB8FD0800363873 /* HeartViewController */,
-				883935252CB8FD2A00363873 /* MyViewController */,
+				6F58F2822CBE5F8000275EE6 /* Main */,
 				6F3DA9F12C92BC4C00F06971 /* SignUp */,
 				6F3DA9EE2C92BC2D00F06971 /* Login */,
 			);
@@ -232,36 +240,36 @@
 			path = MajorLabel;
 			sourceTree = "<group>";
 		};
-		6FDFAA042CB3F1310066725A /* Main */ = {
+		6FDFAA042CB3F1310066725A /* Home */ = {
 			isa = PBXGroup;
 			children = (
 				6FDFAA052CB3F1400066725A /* HomeViewController.swift */,
 			);
-			path = Main;
+			path = Home;
 			sourceTree = "<group>";
 		};
-		8839351D2CB8FCA500363873 /* UserSearchViewController */ = {
+		8839351D2CB8FCA500363873 /* UserSearch */ = {
 			isa = PBXGroup;
 			children = (
 				8839351E2CB8FCB900363873 /* UserSearchViewController.swift */,
 			);
-			path = UserSearchViewController;
+			path = UserSearch;
 			sourceTree = "<group>";
 		};
-		883935202CB8FD0800363873 /* HeartViewController */ = {
+		883935202CB8FD0800363873 /* Heart */ = {
 			isa = PBXGroup;
 			children = (
 				883935212CB8FD1800363873 /* HeartViewController.swift */,
 			);
-			path = HeartViewController;
+			path = Heart;
 			sourceTree = "<group>";
 		};
-		883935252CB8FD2A00363873 /* MyViewController */ = {
+		883935252CB8FD2A00363873 /* My */ = {
 			isa = PBXGroup;
 			children = (
 				883935262CB8FD3600363873 /* MyViewController.swift */,
 			);
-			path = MyViewController;
+			path = My;
 			sourceTree = "<group>";
 		};
 		883935282CB90AE100363873 /* Alert */ = {

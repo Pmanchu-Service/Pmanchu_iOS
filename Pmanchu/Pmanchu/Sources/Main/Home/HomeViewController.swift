@@ -35,8 +35,8 @@ class HomeViewController: UIViewController {
     
     private func layout() {
         searchBar.snp.makeConstraints {
-            $0.top.equalTo(view.safeAreaLayoutGuide).inset(20)
-            $0.leading.trailing.equalToSuperview().inset(24)
+            $0.top.equalTo(view.safeAreaLayoutGuide).inset(74)
+            $0.leading.trailing.equalToSuperview().inset(23)
         }
     }
         
