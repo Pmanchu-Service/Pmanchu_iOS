@@ -20,6 +20,7 @@ class UserSearchViewController: UIViewController {
         setupLayout()
     }
     
+    
     private func addView() {
         [
             searchBar
