@@ -4,13 +4,11 @@ import Then
 
 class UserSearchViewController: UIViewController {
     
-    
     public let searchBar = UISearchBar().then {
         $0.searchBarStyle = .prominent
         $0.setBackgroundImage(UIImage(), for: .any, barMetrics: .default)
         $0.setImage(UIImage(named: "search"), for: UISearchBar.Icon.search, state: .normal)
     }
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,7 +17,6 @@ class UserSearchViewController: UIViewController {
         addView()
         setupLayout()
     }
-    
     
     private func addView() {
         [
