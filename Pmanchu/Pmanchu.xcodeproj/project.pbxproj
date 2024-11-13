@@ -81,6 +81,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6F058FA12CE4DD4F00F32576 /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				6F3DA9EE2C92BC2D00F06971 /* Login */,
+				6F3DA9F12C92BC4C00F06971 /* SignUp */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
 		6F3DA9EA2C92BA9500F06971 /* DesignSystem */ = {
 			isa = PBXGroup;
 			children = (
@@ -208,9 +217,8 @@
 		6FB81AAE2C91F9370060CB73 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				6F058FA12CE4DD4F00F32576 /* Auth */,
 				6F58F2822CBE5F8000275EE6 /* Main */,
-				6F3DA9F12C92BC4C00F06971 /* SignUp */,
-				6F3DA9EE2C92BC2D00F06971 /* Login */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
