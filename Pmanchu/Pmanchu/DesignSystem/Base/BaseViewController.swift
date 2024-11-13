@@ -5,7 +5,6 @@ open class BaseViewController: UIViewController {
         super.viewDidLoad()
         attribute()
         bind()
-        bindAction()
     }
     open override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
