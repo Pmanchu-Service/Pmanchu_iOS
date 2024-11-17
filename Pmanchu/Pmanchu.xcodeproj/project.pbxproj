@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6F0A3F0E2CE598A8006AAD65 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 6F0A3F0D2CE598A8006AAD65 /* RxCocoa */; };
+		6F0A3F112CE598F8006AAD65 /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = 6F0A3F102CE598F8006AAD65 /* Moya */; };
+		6F0A3F132CE598F8006AAD65 /* RxMoya in Frameworks */ = {isa = PBXBuildFile; productRef = 6F0A3F122CE598F8006AAD65 /* RxMoya */; };
 		6F3DA9FD2C9301BD00F06971 /* SignUpSelfViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F3DA9FC2C9301BD00F06971 /* SignUpSelfViewController.swift */; };
 		6F7E4D3B2CE3715F00B41D71 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F7E4D3A2CE3715A00B41D71 /* BaseViewController.swift */; };
 		6F8AAC862C95F23D00077431 /* SignUpMajorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F8AAC852C95F23D00077431 /* SignUpMajorViewController.swift */; };
@@ -73,7 +76,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6F0A3F132CE598F8006AAD65 /* RxMoya in Frameworks */,
+				6F0A3F0E2CE598A8006AAD65 /* RxCocoa in Frameworks */,
 				6FB81AB62C91FA3F0060CB73 /* Then in Frameworks */,
+				6F0A3F112CE598F8006AAD65 /* Moya in Frameworks */,
 				6FB81AB92C91FA460060CB73 /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -81,6 +87,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6F058FA12CE4DD4F00F32576 /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				6F3DA9EE2C92BC2D00F06971 /* Login */,
+				6F3DA9F12C92BC4C00F06971 /* SignUp */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
+		6F0A3F142CE59960006AAD65 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
 		6F3DA9EA2C92BA9500F06971 /* DesignSystem */ = {
 			isa = PBXGroup;
 			children = (
@@ -209,8 +231,8 @@
 			isa = PBXGroup;
 			children = (
 				6F58F2822CBE5F8000275EE6 /* Main */,
-				6F3DA9F12C92BC4C00F06971 /* SignUp */,
-				6F3DA9EE2C92BC2D00F06971 /* Login */,
+				6F0A3F142CE59960006AAD65 /* Networking */,
+				6F058FA12CE4DD4F00F32576 /* Auth */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -334,6 +356,9 @@
 			packageProductDependencies = (
 				6FB81AB52C91FA3F0060CB73 /* Then */,
 				6FB81AB82C91FA460060CB73 /* SnapKit */,
+				6F0A3F0D2CE598A8006AAD65 /* RxCocoa */,
+				6F0A3F102CE598F8006AAD65 /* Moya */,
+				6F0A3F122CE598F8006AAD65 /* RxMoya */,
 			);
 			productName = Pmanchu;
 			productReference = 6FB81A972C91F8C20060CB73 /* Pmanchu.app */;
@@ -366,6 +391,8 @@
 			packageReferences = (
 				6FB81AB42C91FA3F0060CB73 /* XCRemoteSwiftPackageReference "Then" */,
 				6FB81AB72C91FA460060CB73 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				6F0A3F0C2CE598A8006AAD65 /* XCRemoteSwiftPackageReference "RxSwift" */,
+				6F0A3F0F2CE598F8006AAD65 /* XCRemoteSwiftPackageReference "Moya" */,
 			);
 			productRefGroup = 6FB81A982C91F8C20060CB73 /* Products */;
 			projectDirPath = "";
@@ -629,6 +656,22 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		6F0A3F0C2CE598A8006AAD65 /* XCRemoteSwiftPackageReference "RxSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ReactiveX/RxSwift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.8.0;
+			};
+		};
+		6F0A3F0F2CE598F8006AAD65 /* XCRemoteSwiftPackageReference "Moya" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Moya/Moya.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 15.0.3;
+			};
+		};
 		6FB81AB42C91FA3F0060CB73 /* XCRemoteSwiftPackageReference "Then" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/devxoul/Then";
@@ -648,6 +691,21 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		6F0A3F0D2CE598A8006AAD65 /* RxCocoa */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 6F0A3F0C2CE598A8006AAD65 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxCocoa;
+		};
+		6F0A3F102CE598F8006AAD65 /* Moya */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 6F0A3F0F2CE598F8006AAD65 /* XCRemoteSwiftPackageReference "Moya" */;
+			productName = Moya;
+		};
+		6F0A3F122CE598F8006AAD65 /* RxMoya */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 6F0A3F0F2CE598F8006AAD65 /* XCRemoteSwiftPackageReference "Moya" */;
+			productName = RxMoya;
+		};
 		6FB81AB52C91FA3F0060CB73 /* Then */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 6FB81AB42C91FA3F0060CB73 /* XCRemoteSwiftPackageReference "Then" */;
